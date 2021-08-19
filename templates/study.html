@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  <title>Places of study</title>
+{% endblock %}
+
+{% block welcome %}
+<h1>{{ title }} <h1>
+{% endblock %}
+
+{% block row %}
+<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#study">Места обучения</button>
+<div id="study" class="collapse">
+      {% for study_place in study_places_list %}
+        {{ study_place.name }} <br>
+        Тип: {{ study_place.type }} <br>
+        Обучался с: {{ study_place.study_from }} <br>
+        До: {{ study_place.study_to }} <br>
+      <hr>
+      {% endfor %}
+</div>
+  {% block first_col %}
+  <h2>{{ school_name }}</h2>
+  <img src="https://ic.wampi.ru/2021/08/12/school1985.jpg" alt="school1985">
+  <h5>Пару слов о школе:</h5>
+  <p>Школа разделена на младшие и старшие классы. Левое крыло школы отведено под младшие классы,правое под старшие.
+    Для каждого крыла есть своя столовая. Так же в школе присутствуют ботанический сад,2 спортзала и 3 площадки для
+    занятий спортом на улице.
+  {% endblock %}
+  {% block second_col %}
+  <h2>{{ university }}</h2>
+  <img src="https://ic.wampi.ru/2021/08/12/rosnou.jpg" alt="rosnou" border="0">
+  <h5>Немного про университет:</h5>
+  <p>РОСНОУ - это московский вуз, основанный в 1991 году. Вуз расположен по адресу: улица Радио, 22.
+    <br>РОСНОУ имеет несколько филиалов в разных городах России и колледж в 10 минутах ходьбы от метро Планерная.
+    <br>Вуз включает в себя 7 институтов:
+  </p>
+  <ul style="list-style-type: none;padding: 0">
+    <li>Институт бизнес-технологий</li>
+    <li>Институт информационных систем и инженерно-компьютерных технологий</li>
+    <li>Институт гуманитарных технологий</li>
+    <li>Институт экономики,управления и финансов</li>
+    <li>Юридический Институт</li>
+    <li>Институт психологии и педагогики</li>
+    <li>Налоговый институт</li>
+  </ul>
+  {% endblock %}
+{% endblock %}

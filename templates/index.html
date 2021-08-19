@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block second_col %}
+  <div class="col-sm-8">
+    <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#hobby"><h2>Мои хобби</h2></button>
+    <div id="hobby" class="collapse">
+      {% for hobby in hobby_list %}
+        Хобби: {{ hobby.name }} <br>
+        Приоритет: {{ hobby.priority }} <br>
+        Наличие специальной подготовки : {{ hobby.special_preparation }} <br>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

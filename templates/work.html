@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  <title>Places of work</title>
+{% endblock %}
+
+{% block welcome %}
+<h1> {{ title }}</h1>
+{% endblock %}
+
+{% block row %}
+  {% for work_place in work_list %}
+    <ul>
+      <li>
+        Организация: {{ work_place.organization }}<br>
+        Регион: {{ work_place.region }} <br>
+        Сайт: {{ work_place.site }} <br>
+        Продолжительность работы: {{ work_place.period }} год <br>
+        Обязанности: {{ work_place.duties }}
+      </li>
+    </ul>
+  {% endfor %}
+{% endblock %}
